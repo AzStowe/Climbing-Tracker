@@ -1,8 +1,19 @@
 const User = require('../models/user');
+const Climb = require('../models/climb');
 
 module.exports = {
   index,
+  newClimb,
+  show
 };
+
+function newClimb(req, res) {
+  res.render('users/new');
+}
+
+function show(req, res) {
+  res.render('/users/show');
+}
 
 function index(req, res, next) {
   console.log(req.query)

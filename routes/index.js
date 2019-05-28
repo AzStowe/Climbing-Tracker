@@ -1,11 +1,21 @@
 var router = require('express').Router();
 var passport = require('passport');
+var usersCtrl = require('../controllers/users');
 
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.redirect('/users')
+  res.redirect('/users');
 });
+
+router.get('/new', usersCtrl.newClimb);
+
+
+
+
+
+
+
 
 router.get('/auth/google', passport.authenticate(
   'google',
