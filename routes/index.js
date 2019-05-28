@@ -1,21 +1,10 @@
 var router = require('express').Router();
 var passport = require('passport');
-var usersCtrl = require('../controllers/users');
 
-
-/* GET home page. */
-router.get('/', function(req, res, next) {
-  res.redirect('/users');
+// The root route renders our only view
+router.get('/', function(req, res) {
+  res.redirect('/climbs');
 });
-
-router.get('/new', usersCtrl.newClimb);
-
-
-
-
-
-
-
 
 router.get('/auth/google', passport.authenticate(
   'google',
@@ -25,14 +14,14 @@ router.get('/auth/google', passport.authenticate(
 router.get('/oauth2callback', passport.authenticate(
   'google',
   {
-    successRedirect : '/users',
-    failureRedirect : '/users'
+    successRedirect : '/climbs',
+    failureRedirect : '/climbs'
   }
 ));
 
 router.get('/logout', function(req, res){
   req.logout();
-  res.redirect('/users');
+  res.redirect('/climbs');
 });
 
 module.exports = router;

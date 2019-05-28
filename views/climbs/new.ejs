@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Climb Rocks</title>
+    <!-- Google Icon Fonts used by Materialize -->
+    <link
+      href="http://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <!-- Materialize CSS Framework -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+     <link rel="stylesheet" href="/stylesheets/style.css" />
+    <!-- JavaScript for Materialize -->
+    <script
+      defer
+      src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"
+    ></script>
+  </head>
+
+  <body>
+
+    <div class="navbar-fixed">
+      <nav>
+        <div class="nav-wrapper">
+          <a href="" class="brand-logo left">Climb Rocks</a>
+        </div>
+      </nav>
+
+    </div>
+    <div class='container'>
+    <h4>Enter a New Climb</h4>
+    <form action="/climbs" method="POST">
+
+      <div class="input-field col s12">
+        <select name="rating">
+          <option value="V0">V0</option>
+          <option value="V1">V1</option>
+          <option value="V2">V2</option>
+          <option value="V3">V3</option>
+          <option value="V4">V4</option>
+          <option value="V5">V5</option>
+          <option value="V6">V6</option>
+          <option value="V7">V7</option>
+          <option value="V8">V8</option>
+        </select>
+        <label for="rating">Climb rating:</label>
+      </div>
+      <br />
+      <label>Location:
+        <input type="text" name="location" /> </label
+      ><br />
+      <label
+        >Date
+        <input
+          type="datetime-local"
+          name="date"
+          value="2019-05-28T15:30"
+          min="2019-05-28T00:00"
+          max="2020-05-28T00:00"
+        /> </label
+      ><br />
+      <label
+        >Notes:
+        <input type="text" name="stats" /> </label
+      ><br />
+      <input type="submit" value="Add Climb" />
+    </form>
+    </div>
+  </body>
+</html>

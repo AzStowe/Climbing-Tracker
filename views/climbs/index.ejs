@@ -12,7 +12,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
     />
-    <link rel="stylesheet" href="stylesheets/style.css" />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
     <!-- JavaScript for Materialize -->
     <script
       defer
@@ -37,7 +37,28 @@
         </div>
       </nav>
     </div>
-      <h4><a href="/new">Add new climb</a></h4>
+    <h2>Climbs</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Climb Rating</th>
+          <th>Location</th>
+          <th>Date</th>
+          <th>Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% climbs.forEach(function(c) { %>
+          <tr>
+            <td><%= c.rating %></td>
+            <td><%= c.location %></td>
+            <td><%= c.date %></td>
+            <td><%= c.notes %></td>
+          </tr>
+          <% }) %>
+      </tbody>
+    </table>    
+      <h4><a href="climbs/new">Add new climb</a></h4>
 
     
 </body>
