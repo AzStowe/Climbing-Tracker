@@ -5,7 +5,8 @@ module.exports = {
   index,
   newClimb,
   show,
-  create
+  create,
+  deleteClimb
 };
 
 function newClimb(req, res) {
@@ -24,9 +25,26 @@ function create(req, res) {
   });
 }
 
+
 function show(req, res) {
-  res.render('/climbs/show');
-}
+  Climb.findById(req.params.id, function (err, climb) {
+    if (err) return res.send(err);
+    // Ticket.find({flight: flight._id}, function(err2, tickets) {
+    //   if (err2) {
+    //     res.send(error)
+    //   }
+      res.render('climbs/show', {climb});
+    })
+  };
+
+  function deleteClimb(req ,res) {
+    Climb.findByIdAndDelete(req.params.id, function(err, climb){
+      if (err) return res.redirect('/climbs');
+        console.log(climb);
+      res.redirect('/climbs');
+    });
+  }
+
 
 function index(req, res, next) {
   Climb.find({}, function(err, climbs) {

@@ -12,7 +12,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
     />
-    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <link rel="stylesheet" href="stylesheets/style.css" />
     <!-- JavaScript for Materialize -->
     <script
       defer
@@ -45,6 +45,7 @@
           <th>Location</th>
           <th>Date</th>
           <th>Notes</th>
+          <th></th>
         </tr>
       </thead>
       <tbody>
@@ -53,7 +54,9 @@
             <td><%= c.rating %></td>
             <td><%= c.location %></td>
             <td><%= c.date %></td>
-            <td><%= c.notes %></td>
+            <td><%= c.stats %></td>
+            <td><a href="/climbs/<%= c._id %>">Details</a></td>
+
           </tr>
           <% }) %>
       </tbody>

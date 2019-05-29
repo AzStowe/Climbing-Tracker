@@ -12,7 +12,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
     />
-    <link rel="stylesheet" href="stylesheets/style.css" />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
     <!-- JavaScript for Materialize -->
     <script
       defer
@@ -27,7 +27,31 @@
           <a href="" class="brand-logo left">Climb Rocks</a>
         </div>
       </nav>
-      <h1>This is the show page</h1>
+      </div>
+
+      <h1>Climb Details</h1>
+      <form action="/climbs/<%= climb._id %>?_method=DELETE" method="POST">
+      <button type="submit">Delete Climb</button>
+    </form>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Climb Rating</th>
+          <th>Location</th>
+          <th>Date</th>
+          <th>Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><%= climb.rating%></td>
+          <td><%= climb.location %></td>
+          <td><%= climb.date %></td>
+          <td><%= climb.stats %></td>
+        </tr>
+      </tbody>
+    </table>
       
     
 </body>

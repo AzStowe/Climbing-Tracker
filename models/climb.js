@@ -9,7 +9,7 @@ var commentSchema = new mongoose.Schema({
 var climbSchema = new mongoose.Schema({
     rating: {
       type: String,
-      enum: ['V0', 'V1', 'V2', 'V2', 'V3', 'V4', 'V5', 'V6', 'V7', 'V7'],
+      enum: ['V0', 'V1', 'V2', 'V2', 'V3', 'V4', 'V5', 'V6', 'V7', 'V8'],
       default: 'V0',
     },
     location: String,

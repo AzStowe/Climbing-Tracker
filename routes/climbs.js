@@ -10,13 +10,10 @@ router.get('/', function(req, res, next) {
 
 router.get('/climbs', climbsCtrl.index);
 router.get('/climbs/new', climbsCtrl.newClimb);
+router.get('/climbs/:id', climbsCtrl.show);
 router.post('/climbs', climbsCtrl.create);
+router.delete('/climbs/:id', climbsCtrl.deleteClimb);
 
-
-/* GET users listing. */
-router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
-});
 
 function isLoggedIn(req, res, next) {
   if ( req.isAuthenticated() ) return next();
