@@ -1,7 +1,7 @@
 <% include ../partials/header %>
 
     <h4>Enter a New Climb</h4>
-    <form action="/climbs" method="POST">
+    <form action="/climbs/create" method="POST">
 
         <label>Best Climb:
           <input type="text" name="rating" placeholder="V0"/> 
@@ -23,7 +23,7 @@
 
       <label>Notes:
         <input type="text" name="stats" /> 
-        </label><br />
+      </label><br />
       <input type="submit" value="Add Climb" />
     </form>
 

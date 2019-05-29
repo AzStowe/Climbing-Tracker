@@ -6,7 +6,8 @@ module.exports = {
   newClimb,
   show,
   create,
-  deleteClimb
+  deleteClimb,
+  updateClimb
 };
 
 function newClimb(req, res) {
@@ -38,9 +39,24 @@ function show(req, res) {
 
   function deleteClimb(req ,res) {
     Climb.findByIdAndDelete(req.params.id, function(err, climb){
-      if (err) return res.redirect('/climbs');
+      if (err) return res.redirect('/climbs/');
         console.log(climb);
       res.redirect('/climbs');
+    });
+  }
+
+  function updateClimb(req,res) {
+    console.log(req.body)
+    console.log("The route was hit")
+    Climb.findById(req.params.id, function (err, climb) {
+      climb.stats = req.body.stats
+      climb.save()
+      .then(result => {
+        console.log(result)
+        res.redirect(`/climbs/`)
+      })
+      .catch(error => console.log(error))
+      
     });
   }
 

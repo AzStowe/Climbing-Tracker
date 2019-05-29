@@ -8,19 +8,26 @@
     <table>
       <thead>
         <tr>
-          <th>Best CLimb</th>
+          <th>Best Climb</th>
           <th>Location</th>
           <th>Date</th>
           <th>Notes</th>
+          <th></th>
         </tr>
+
       </thead>
+      
       <tbody>
+      <form action ="/climbs/update/<%= climb._id %>?_method=POST" method="POST">
         <tr>
           <td><%= climb.rating%></td>
           <td><%= climb.location %></td>
           <td><%= climb.date %></td>
-          <td><%= climb.stats %></td>
+          <td><input type="text" name ="stats" value="<%= climb.stats %>"></td>
+          <td> <input type=Submit /></td>
+
         </tr>
+      </form>
       </tbody>
     </table>
       
