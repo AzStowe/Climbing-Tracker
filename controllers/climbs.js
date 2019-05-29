@@ -10,7 +10,8 @@ module.exports = {
 };
 
 function newClimb(req, res) {
-  res.render('climbs/new');
+  console.log('anything');
+  res.render('climbs/new', {user: req.user});
 }
 
 function create(req, res) {
@@ -19,8 +20,6 @@ function create(req, res) {
   climb.save(function(err) {
       // one way to handle errors
       if (err) return res.send(err);
-      // if (err) return res.render('users/new');
-      // for now, redirect right back to new.ejs
       res.redirect('/climbs');
   });
 }
@@ -33,7 +32,7 @@ function show(req, res) {
     //   if (err2) {
     //     res.send(error)
     //   }
-      res.render('climbs/show', {climb});
+      res.render('climbs/show', {user: req.user, climb});
     })
   };
 
