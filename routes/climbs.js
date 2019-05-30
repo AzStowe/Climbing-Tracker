@@ -8,6 +8,7 @@ function isLoggedIn(req, res, next) {
 }
 //renders the show page
 router.get('/', isLoggedIn, climbsCtrl.index);
+
 //redirects to /climbs
 router.get('/new', isLoggedIn, climbsCtrl.newClimb);
 //redirects to /climbs

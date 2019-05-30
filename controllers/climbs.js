@@ -7,8 +7,9 @@ module.exports = {
   show,
   create,
   deleteClimb,
-  updateClimb
+  updateClimb,
 };
+
 
 function newClimb(req, res) {
   console.log('anything');
@@ -29,10 +30,6 @@ function create(req, res) {
 function show(req, res) {
   Climb.findById(req.params.id, function (err, climb) {
     if (err) return res.send(err);
-    // Ticket.find({flight: flight._id}, function(err2, tickets) {
-    //   if (err2) {
-    //     res.send(error)
-    //   }
       res.render('climbs/show', {user: req.user, climb});
     })
   };
@@ -53,7 +50,7 @@ function show(req, res) {
       climb.save()
       .then(result => {
         console.log(result)
-        res.redirect(`/climbs/`)
+        res.redirect(`/climbs/${req.params.id}`)
       })
       .catch(error => console.log(error))
       
@@ -61,7 +58,7 @@ function show(req, res) {
   }
 
 
-function index(req, res, next) {
+function index(req, res) {
   Climb.find({}, function(err, climbs) {
     res.render('climbs/index', {
       user: req.user, climbs
