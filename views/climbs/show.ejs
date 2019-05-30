@@ -1,11 +1,12 @@
 <% include ../partials/header %>
 
-      <h1>Climb Details</h1>
+      <h1 class="header center grey-text">Climb Details</h1>
       <form action="/climbs/<%= climb._id %>?_method=DELETE" method="POST">
-      <button type="submit">Delete Climb</button>
+      <button type="submit"class="btn-floating btn-large waves-effect waves-light red"></a>
+Delete Climb</button>
     </form>
 
-    <table>
+    <table class="centered">
       <thead>
         <tr>
           <th>Best Climb</th>
@@ -24,10 +25,29 @@
           <td><%= climb.location %></td>
           <td><%= climb.date %></td>
           <td><input type="text" name ="stats" value="<%= climb.stats %>"></td>
-          <td> <input type=Submit /></td>
+          <td> <input  class="btn" type="submit"/></td>
         </tr>
       </form>
       </tbody>
     </table>
-      
+     <br><br> 
+     <br><br>
+     <br><br>
+
+       <footer class="page-footer grey darken-3">
+    <div class="container">
+      <div class="row">
+        <div>
+          <h5 class="white-text">About the day</h5>
+          <p class="grey-text text-lighten-4">Any information here is for the purpose of going back and reflecting on previous days. Looking over any notes you put in. Wondering how you climbed so well one day but not others? Go look back on your notes to see if you ate anything different, or slept any different. Make this page like a journal where you can go back and see your own thoughts. Later on people will be able to see some information on this page and see how you climbed, ans they will be able to comment on your climbs so that you can all communicate and grow a community with each other.</p>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+      Made by <a class="orange-text text-lighten-3" href="http://materializecss.com">Materialize</a>
+      </div>
+    </div>
+  </footer>
+
 <%include ../partials/footer %>

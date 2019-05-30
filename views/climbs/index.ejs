@@ -1,21 +1,23 @@
 <% include ../partials/header %>
 
-    <h2>Climbs</h2>
-      <h5><a href="/climbs/new">Add new climb</a></h5>
-    <table>
+    <h2  class="header center grey-text">Climbs</h2>
+      <h5  class="header center grey-text"><a href="/climbs/new" class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">add</i></a></h5>
+        
+
+    <table class="striped">
       <thead>
         <tr>
-          <th>Best Climb</th>
+          <th class ="center">Best Climb</th>
           <th>Location</th>
           <th>Date</th>
           <th>Notes</th>
           <th></th>
         </tr>
       </thead>
-      <tbody>
+      <tbody class="striped">
         <% climbs.forEach(function(c) { %>
           <tr>
-            <td><%= c.rating %></td>
+            <td class ="center"><%= c.rating %></td>
             <td><%= c.location %></td>
             <td><%= c.date %></td>
             <td><%= c.stats %></td>
@@ -25,5 +27,26 @@
           <% }) %>
       </tbody>
     </table>    
+    <br><br>
+    <br><br>
+    <br><br>
+    <br><br>
+
+</div>
+     <footer class="page-footer grey darken-3">
+    <div class="container">
+      <div class="row">
+        <div>
+          <h5 class="white-text">View Your Stats</h5>
+          <p class="grey-text text-lighten-4">This page is so that you are able to see all the days that you climbed and all the information for each day. Eventually I would like this to show graphs of your activity instead of just a table, so that you can have a better visual of the work you are putting in. Later on you will be able to see certain trends in your climbing. What type of climb are you more comfortable with.</p>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+      Made by <a class="orange-text text-lighten-3" href="http://materializecss.com">Materialize</a>
+      </div>
+    </div>
+  </footer>
 
 <%include ../partials/footer %>

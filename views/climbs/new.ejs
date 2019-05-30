@@ -1,10 +1,20 @@
 <% include ../partials/header %>
 
-    <h4>Enter a New Climb</h4>
+    <h4 class="header center grey-text">Enter a New Climb</h4>
     <form action="/climbs/create" method="POST">
 
-        <label>Best Climb:
-          <input type="text" name="rating" placeholder="V0"/> 
+    <label>Best Climb</label>
+    <select  class="input-field col s12" name="rating">
+      <option value="V0">V0</option>
+      <option value="V1">V1</option>
+      <option value="V2">V2</option>
+      <option value="V3">V3</option>
+      <option value="V4">V4</option>
+      <option value="V5">V5</option>
+      <option value="V6">V6</option>
+      <option value="V7">V7</option>
+      <option value="V8">V8</option>
+    </select>
         </label><br />
 
       <label>Location:
@@ -26,6 +36,24 @@
       </label><br />
       <input type="submit" value="Add Climb" />
     </form>
+
+    <br><br>
+
+     <footer class="page-footer grey darken-3">
+    <div class="container">
+      <div class="row">
+        <div>
+          <h5 class="white-text">Why Input a New Climb?</h5>
+          <p class="grey-text text-lighten-4">The reason that you are inputting a new climb is so that you are able to keep track of your climbing activity for that day. How are you going to remember how you climbed a few days prior when you cant even remember what you ate for breakfast this morning. Keep track of your activity so that you can see it later on.</p>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+      Made by <a class="orange-text text-lighten-3" href="http://materializecss.com">Materialize</a>
+      </div>
+    </div>
+  </footer>
 
 
 <%include ../partials/footer %>

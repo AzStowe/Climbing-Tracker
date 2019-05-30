@@ -13,27 +13,32 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
     />
     <link rel="stylesheet" href="stylesheets/style.css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
     <!-- JavaScript for Materialize -->
-    <script
-      defer
-      src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"
-    ></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="js/materialize.js"></script>
+    <script src="js/init.js"></script>
   </head>
 
   <body>
     <div class="navbar-fixed">
-      <nav>
-        <div class="nav-wrapper">
-          <a href="./" class="brand-logo left">Climb Rocks</a>
-          <ul class="right">
+      <nav class ="light-blue lighten-1" role="navigation">
+        <div class="nav-wrapper container">
+          <a href="./" class="brand-logo left white-text">Climb Rocks</a>
+          <ul class="right hide-on-med-and-down">
             <li>
               <% if (user) { %>
-              <a href="/logout"><i class="material-icons left"></i>Log Out</a>
+              <a href="/logout" class ="white-text"><i class="material-icons left"></i>Log Out</a>
               <% } else { %>
-              <a href="/auth/google"><i class="material-icons left"></i>Login</a>
+              <a href="/auth/google" class ="white-text"><i class="material-icons left"></i>Login</a>
               <% } %>
             </li>
           </ul>
         </div>
       </nav>
     </div>
+
+<main>    
