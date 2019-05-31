@@ -9,9 +9,9 @@ Rock climbing has always been a big part of my life. So when I had the opportuni
 In this app you will be able to log any information about a climb. So you would go climbing one day and when you finish up you would input this information into the application so that if you wanted to you could go back and view the information that you put into each day that you climbed. As you keep inputting information your page will update, showing you how you have grown from your first day to your current climbing day.
 
 ## Screenshots
-! (images/rockclimbmain.png)
-! (images/rockclimbhome.png)
-! (images/rockclimbdetails.png)
+!(images/rockclimbmain.png)
+!(images/rockclimbhome.png)
+!(images/rockclimbdetails.png)
 	
 ## Technologies
 Project is created with:
